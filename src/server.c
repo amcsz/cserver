@@ -21,12 +21,19 @@ int main() {
 
 	// listen for connections	
 	listen(server_socket, 10); // 2nd arg is max backlog 
+
+	while (1) {
+		int client_socket = accept(server_socket, NULL, NULL);
+		
+		char buffer[1024] = {0};
+		read(client_socket, buffer, 1024);
+		printf("Received: %s\n", buffer);
+
 	
-	int client_socket = accept(server_socket, NULL, NULL);
-
-	send(client_socket, server_message, sizeof(server_message), 0);
-
+		send(client_socket, server_message, sizeof(server_message), 0);
+		close(client_socket);
+	}
+	
 	close(server_socket);
-
 	return 0;
 }

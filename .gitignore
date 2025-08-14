@@ -58,4 +58,6 @@ dkms.conf
 *~
 *.swp
 *.swo
-
+.*.swp
+.*.swo
+.*.swn

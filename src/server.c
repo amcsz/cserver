@@ -8,7 +8,7 @@
 
 int main() {
 	FILE *html_data;
-	html_data = fopen("www/index.html", "r");
+	html_data = fopen("src/www/index.html", "r");
 
 	if (html_data == NULL) {
 		printf("Error opening file.\n");

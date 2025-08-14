@@ -61,3 +61,6 @@ dkms.conf
 .*.swp
 .*.swo
 .*.swn
+
+obj/
+./server
